@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 05 · Gestão de Inventário</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="topo">
+    <div class="topo__conteudo">
+      <div class="marca">
+        <span class="marca__logo">IL</span>
+        <div>
+          <strong>Inforlandia</strong>
+          <small>Gestão de inventário</small>
+        </div>
+      </div>
+      <span class="etiqueta-desafio">Desafio 05</span>
+    </div>
+  </header>
+
+  <main class="contentor">
+
+    <!-- ===================== INTRODUÇÃO ===================== -->
+    <section class="intro">
+      <h1>E se fossem 300 computadores?</h1>
+      <p>
+        Com trinta equipamentos, uma lista chega. Com trezentos, a equipa precisa
+        de pesquisar, filtrar, ordenar e ver os totais de relance.
+      </p>
+    </section>
+
+    <!-- ===================== ESTATÍSTICAS ===================== -->
+    <section class="estatisticas" aria-label="Resumo do inventário">
+      <div class="estatistica">
+        <div class="estatistica__rotulo">Total de computadores</div>
+        <div class="estatistica__valor" id="estat-total">—</div>
+      </div>
+      <div class="estatistica estatistica--disponivel">
+        <div class="estatistica__rotulo">Disponíveis</div>
+        <div class="estatistica__valor" id="estat-disponiveis">—</div>
+      </div>
+      <div class="estatistica estatistica--manutencao">
+        <div class="estatistica__rotulo">Em manutenção</div>
+        <div class="estatistica__valor" id="estat-manutencao">—</div>
+      </div>
+      <div class="estatistica estatistica--vendido">
+        <div class="estatistica__rotulo">Vendidos</div>
+        <div class="estatistica__valor" id="estat-vendidos">—</div>
+      </div>
+    </section>
+
+    <!-- ===================== FILTROS ===================== -->
+    <section class="cartao">
+      <div class="filtros">
+        <div class="campo campo--pesquisa">
+          <label for="campo-pesquisa">Pesquisar por número de série</label>
+          <input type="search" id="campo-pesquisa" placeholder="Ex.: HP-2026-0042 ou apenas HP" autocomplete="off">
+        </div>
+
+        <div class="campo">
+          <label for="filtro-estado">Estado</label>
+          <select id="filtro-estado">
+            <option value="todos">Todos os estados</option>
+            <option value="Disponível">Disponível</option>
+            <option value="Em manutenção">Em manutenção</option>
+            <option value="Vendido">Vendido</option>
+            <option value="Abatido">Abatido</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <label for="ordenacao">Ordenar por</label>
+          <select id="ordenacao">
+            <option value="serie-asc">N.º de série (A → Z)</option>
+            <option value="marca-asc">Marca (A → Z)</option>
+            <option value="preco-asc">Preço (mais barato)</option>
+            <option value="preco-desc">Preço (mais caro)</option>
+            <option value="data-desc">Data de entrada (mais recente)</option>
+          </select>
+        </div>
+
+        <button type="button" id="botao-limpar" class="botao botao--secundario">Limpar filtros</button>
+      </div>
+    </section>
+
+    <!-- ===================== TABELA ===================== -->
+    <section class="cartao">
+      <div class="cartao__titulo">
+        <h2>Equipamentos</h2>
+        <span id="contador-resultados" class="contador-resultados"></span>
+      </div>
+
+      <div id="mensagem" class="alerta" role="status" aria-live="polite"></div>
+
+      <div class="tabela-contentor tabela-contentor--alta">
+        <table class="tabela">
+          <thead>
+            <tr>
+              <th>N.º de série</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Tipo</th>
+              <th>Processador</th>
+              <th class="numero">RAM</th>
+              <th>Armazenamento</th>
+              <th>Entrada</th>
+              <th class="numero">Preço</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="corpo-tabela">
+            <!-- As linhas são criadas pelo JavaScript (função mostrarTabela) -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    EPA · 4EH · SkillLABS 1 — Projeto pedagógico com dados fictícios gerados automaticamente
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

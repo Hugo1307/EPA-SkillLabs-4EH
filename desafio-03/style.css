@@ -1,0 +1,596 @@
+/* =============================================================
+   INFORLANDIA · EPA DESAFIOS — ESTILOS BASE
+   Esta primeira parte é igual nos três projetos (identidade visual comum).
+   A parte específica de cada desafio está no fim do ficheiro.
+   ============================================================= */
+
+/* ---------- 1. Variáveis (cores, raios, sombras) ---------- */
+:root {
+  --cor-primaria: #1d4ed8;
+  --cor-primaria-escura: #1e3a8a;
+  --cor-primaria-clara: #eff6ff;
+
+  --cor-fundo: #f1f5f9;
+  --cor-superficie: #ffffff;
+  --cor-texto: #0f172a;
+  --cor-texto-suave: #64748b;
+  --cor-borda: #e2e8f0;
+
+  --cor-sucesso: #15803d;  --cor-sucesso-fundo: #dcfce7;
+  --cor-aviso: #a16207;    --cor-aviso-fundo: #fef9c3;
+  --cor-erro: #b91c1c;     --cor-erro-fundo: #fee2e2;
+  --cor-info: #1d4ed8;     --cor-info-fundo: #dbeafe;
+  --cor-neutro: #475569;   --cor-neutro-fundo: #e2e8f0;
+
+  --raio: 10px;
+  --raio-pequeno: 6px;
+  --sombra: 0 1px 2px rgba(15, 23, 42, 0.06), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --fonte: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fonte-mono: ui-monospace, "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+/* ---------- 2. Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fonte);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3 {
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+svg.icone {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ---------- 3. Cabeçalho ---------- */
+.topo {
+  background: var(--cor-primaria-escura);
+  color: #fff;
+}
+
+.topo__conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marca__logo {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--cor-primaria-escura);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.marca strong {
+  display: block;
+  font-size: 1.05rem;
+}
+
+.marca small {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.etiqueta-desafio {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* ---------- 4. Conteúdo principal ---------- */
+.contentor {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px 40px;
+  flex: 1;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+.intro h1 {
+  font-size: 1.6rem;
+}
+
+.intro p {
+  color: var(--cor-texto-suave);
+  max-width: 70ch;
+}
+
+.cartao {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.cartao__titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.cartao__titulo h2 {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+.texto-suave {
+  color: var(--cor-texto-suave);
+  font-size: 0.9rem;
+}
+
+/* ---------- 5. Formulários ---------- */
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.campo label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="search"],
+select {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--raio-pequeno);
+  background: #fff;
+  color: var(--cor-texto);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.2);
+}
+
+/* ---------- 6. Botões ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: var(--raio-pequeno);
+  border: 1px solid transparent;
+  background: var(--cor-primaria);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.botao:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.botao:active {
+  transform: translateY(1px);
+}
+
+.botao:focus-visible {
+  outline: 3px solid rgba(29, 78, 216, 0.35);
+  outline-offset: 2px;
+}
+
+.botao--secundario {
+  background: #fff;
+  color: var(--cor-texto);
+  border-color: #cbd5e1;
+}
+
+.botao--secundario:hover {
+  background: var(--cor-fundo);
+}
+
+.botao--perigo {
+  background: var(--cor-erro);
+}
+
+.botao--perigo:hover {
+  background: #991b1b;
+}
+
+.botao--sucesso {
+  background: var(--cor-sucesso);
+}
+
+.botao--sucesso:hover {
+  background: #166534;
+}
+
+.botao--pequeno {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* ---------- 7. Mensagens de feedback ---------- */
+.alerta {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: var(--raio-pequeno);
+  border-left: 4px solid;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.alerta:empty {
+  display: none;
+}
+
+.alerta--sucesso { background: var(--cor-sucesso-fundo); border-color: var(--cor-sucesso); color: #14532d; }
+.alerta--aviso   { background: var(--cor-aviso-fundo);   border-color: var(--cor-aviso);   color: #713f12; }
+.alerta--erro    { background: var(--cor-erro-fundo);    border-color: var(--cor-erro);    color: #7f1d1d; }
+.alerta--info    { background: var(--cor-info-fundo);    border-color: var(--cor-info);    color: #1e3a8a; }
+
+/* ---------- 8. Etiquetas de estado ---------- */
+.estado {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.estado--disponivel { background: var(--cor-sucesso-fundo); color: var(--cor-sucesso); }
+.estado--manutencao { background: var(--cor-aviso-fundo);   color: var(--cor-aviso); }
+.estado--vendido    { background: var(--cor-info-fundo);    color: var(--cor-info); }
+.estado--abatido    { background: var(--cor-erro-fundo);    color: var(--cor-erro); }
+
+/* ---------- 9. Tabelas ---------- */
+.tabela-contentor {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+}
+
+.tabela {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.tabela th,
+.tabela td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  white-space: nowrap;
+}
+
+.tabela th {
+  background: #f8fafc;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cor-texto-suave);
+  position: sticky;
+  top: 0;
+}
+
+.tabela tbody tr:hover {
+  background: var(--cor-primaria-clara);
+}
+
+.tabela tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela .numero {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.serie {
+  font-family: var(--fonte-mono);
+  font-size: 0.88rem;
+}
+
+/* ---------- 10. Rodapé ---------- */
+.rodape {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  padding: 16px;
+  border-top: 1px solid var(--cor-borda);
+  background: var(--cor-superficie);
+}
+
+/* ---------- 11. Utilitários ---------- */
+.escondido {
+  display: none !important;
+}
+
+/* ---------- 12. Responsivo (base) ---------- */
+@media (max-width: 600px) {
+  .intro h1 {
+    font-size: 1.3rem;
+  }
+
+  .cartao {
+    padding: 16px;
+  }
+
+  .botao {
+    width: 100%;
+  }
+}
+
+/* =============================================================
+   ESPECÍFICO DO DESAFIO 03 — Login e permissões
+   ============================================================= */
+
+/* Navegação e sessão no cabeçalho */
+.topo__direita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navegacao {
+  display: flex;
+  gap: 4px;
+}
+
+.navegacao a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--raio-pequeno);
+  opacity: 0.85;
+}
+
+.navegacao a:hover {
+  background: rgba(255, 255, 255, 0.12);
+  opacity: 1;
+}
+
+.navegacao a.ativo {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+.sessao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.sessao__perfil {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.sessao .botao {
+  width: auto;
+}
+
+/* Ecrãs (só um está visível de cada vez) */
+.ecra {
+  animation: aparecer 0.2s ease-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Ecrã de login */
+.login {
+  display: grid;
+  grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.login__cartao h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.palavra-passe {
+  position: relative;
+}
+
+.palavra-passe input {
+  padding-right: 80px;
+}
+
+.palavra-passe__mostrar {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  background: none;
+  border: none;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.login__cartao .botao[type="submit"] {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.credenciais {
+  font-size: 0.9rem;
+}
+
+.credenciais code,
+.endereco {
+  font-family: var(--fonte-mono);
+  font-size: 0.85rem;
+  background: var(--cor-fundo);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+
+.teste-endereco .botao {
+  white-space: normal;
+  flex-wrap: wrap;
+}
+
+.teste-endereco {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--cor-borda);
+}
+
+/* Cabeçalho de área (consulta / gestão) */
+.area__cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.area__icone {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: var(--cor-info-fundo);
+  color: var(--cor-primaria);
+}
+
+.area__icone--gestao {
+  background: var(--cor-aviso-fundo);
+  color: var(--cor-aviso);
+}
+
+.area__icone svg.icone {
+  width: 22px;
+  height: 22px;
+}
+
+.area__cabecalho h1 {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.area__cabecalho p {
+  margin: 0;
+}
+
+/* Colunas confidenciais (só na gestão) */
+.tabela th.confidencial,
+.tabela td.confidencial {
+  background: #fffbeb;
+}
+
+/* Ecrã de acesso negado */
+.negado {
+  text-align: center;
+  max-width: 520px;
+  margin: 20px auto;
+}
+
+.negado__icone {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--cor-erro-fundo);
+  color: var(--cor-erro);
+}
+
+.negado__icone svg.icone {
+  width: 30px;
+  height: 30px;
+}
+
+.negado .botao {
+  margin-top: 6px;
+}
+
+@media (max-width: 800px) {
+  .login {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

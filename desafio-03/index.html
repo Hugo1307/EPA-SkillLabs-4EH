@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desafio 03 · Acesso à Gestão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== CABEÇALHO ===================== -->
+  <header class="topo">
+    <div class="topo__conteudo">
+      <div class="marca">
+        <span class="marca__logo">IL</span>
+        <div>
+          <strong>Inforlandia</strong>
+          <small>Marketplace · Backoffice</small>
+        </div>
+      </div>
+
+      <div class="topo__direita">
+        <!-- Links de navegação: mudam o endereço (index.html#consulta, index.html#gestao) -->
+        <nav class="navegacao" aria-label="Navegação principal">
+          <a href="#consulta" data-ecra="consulta">Consulta</a>
+          <a href="#gestao" data-ecra="gestao">Gestão</a>
+        </nav>
+
+        <!-- Barra de sessão: só aparece quando há alguém autenticado -->
+        <div id="barra-sessao" class="sessao escondido">
+          <span>
+            <span id="sessao-nome">—</span>
+            <span id="sessao-perfil" class="sessao__perfil">—</span>
+          </span>
+          <button type="button" id="botao-sair" class="botao botao--secundario botao--pequeno">
+            <svg class="icone" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+            Terminar sessão
+          </button>
+        </div>
+
+        <span class="etiqueta-desafio">Desafio 03</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="contentor">
+
+    <!-- ===================== ECRÃ: LOGIN ===================== -->
+    <section id="ecra-login" class="ecra">
+      <div class="intro">
+        <h1>Qualquer pessoa pode entrar na gestão</h1>
+        <p>
+          A área de gestão do marketplace abre a quem souber o endereço.
+          Protejam-na com um login, sem estragar o que já funcionava.
+        </p>
+      </div>
+
+      <div class="login">
+        <div class="cartao login__cartao">
+          <h2>
+            <svg class="icone" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+            Iniciar sessão
+          </h2>
+          <p class="texto-suave">Introduza as suas credenciais para continuar.</p>
+
+          <div id="mensagem-login" class="alerta" role="status" aria-live="polite"></div>
+
+          <form id="form-login" autocomplete="off" novalidate>
+            <div class="campo">
+              <label for="campo-utilizador">Utilizador</label>
+              <input type="text" id="campo-utilizador" placeholder="ex.: joao">
+            </div>
+
+            <div class="campo">
+              <label for="campo-palavra-passe">Palavra-passe</label>
+              <div class="palavra-passe">
+                <input type="password" id="campo-palavra-passe" placeholder="••••••••">
+                <button type="button" id="botao-mostrar" class="palavra-passe__mostrar">Mostrar</button>
+              </div>
+            </div>
+
+            <button type="submit" class="botao">Entrar</button>
+          </form>
+        </div>
+
+        <div class="cartao credenciais">
+          <div class="cartao__titulo">
+            <h2>Credenciais de teste</h2>
+          </div>
+          <p class="texto-suave">Contas fictícias para testar os diferentes acessos.</p>
+          <div class="tabela-contentor">
+            <table class="tabela">
+              <thead>
+                <tr><th>Utilizador</th><th>Palavra-passe</th><th>Perfil</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><code>admin</code></td><td><code>Admin#2026</code></td><td>Administrador</td></tr>
+                <tr><td><code>gestor</code></td><td><code>Gestor#2026</code></td><td>Administrador</td></tr>
+                <tr><td><code>joao</code></td><td><code>Joao#2026</code></td><td>Utilizador</td></tr>
+                <tr><td><code>maria</code></td><td><code>Maria#2026</code></td><td>Utilizador</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="teste-endereco">
+            <strong>Teste «antes e depois»</strong>
+            <p class="texto-suave">
+              Simula alguém que sabe o endereço da gestão e o escreve diretamente no browser,
+              sem ter feito login:
+            </p>
+            <a href="#gestao" class="botao botao--secundario botao--pequeno">
+              Abrir <span class="endereco">index.html#gestao</span> sem login
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ECRÃ: CONSULTA (todos os perfis) ===================== -->
+    <section id="ecra-consulta" class="ecra escondido">
+      <div class="area__cabecalho">
+        <span class="area__icone">
+          <svg class="icone" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <div>
+          <h1>Consulta de produtos</h1>
+          <p class="texto-suave">Informação pública: o que o cliente vê no marketplace.</p>
+        </div>
+      </div>
+
+      <div id="mensagem-consulta" class="alerta" role="status" aria-live="polite"></div>
+
+      <div class="cartao">
+        <div class="tabela-contentor">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>N.º de série</th>
+                <th>Produto</th>
+                <th>Características</th>
+                <th class="numero">Preço</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-consulta"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ECRÃ: GESTÃO (só administradores) ===================== -->
+    <section id="ecra-gestao" class="ecra escondido">
+      <div class="area__cabecalho">
+        <span class="area__icone area__icone--gestao">
+          <svg class="icone" viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </span>
+        <div>
+          <h1>Área de gestão</h1>
+          <p class="texto-suave">Dados internos: custos e fornecedores. Só a equipa deve ver.</p>
+        </div>
+      </div>
+
+      <div id="mensagem-gestao" class="alerta" role="status" aria-live="polite"></div>
+
+      <div class="cartao">
+        <div class="tabela-contentor">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>N.º de série</th>
+                <th>Produto</th>
+                <th class="numero">Preço</th>
+                <th class="numero confidencial">Custo</th>
+                <th class="numero confidencial">Margem</th>
+                <th class="confidencial">Fornecedor</th>
+              </tr>
+            </thead>
+            <tbody id="tabela-gestao"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ECRÃ: ACESSO NEGADO ===================== -->
+    <section id="ecra-negado" class="ecra escondido">
+      <div class="cartao negado">
+        <div class="negado__icone">
+          <svg class="icone" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m5.7 5.7 12.6 12.6"/></svg>
+        </div>
+        <h1>Acesso negado</h1>
+        <p id="texto-negado" class="texto-suave">Não tem permissão para ver esta página.</p>
+        <a href="#login" id="botao-negado" class="botao">Voltar ao início</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    EPA · 4EH · SkillLABS 1 — Simulação pedagógica de autenticação (não é um sistema de segurança real)
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
