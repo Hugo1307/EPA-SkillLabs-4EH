@@ -1,0 +1,30 @@
+{
+  "numeroSerie": "INF-0001",
+  "equipamento": "Desktop HP EliteDesk 800",
+  "sintoma": "Sem sinal de vida: sem luz, sem ventoinhas, sem imagem.",
+  "medicoes": [
+    {
+      "ponto": "Fonte de alimentação, linha de 12 V, em vazio",
+      "valorEsperadoV": 12,
+      "valorMedidoV": 11.9
+    },
+    {
+      "ponto": "Fonte de alimentação, linha de 12 V, com carga de teste de 6 Ω",
+      "valorEsperadoV": 12,
+      "valorMedidoV": 6.1,
+      "resistenciaCargaOhm": 6
+    },
+    {
+      "ponto": "Pilha da BIOS (CR2032)",
+      "valorEsperadoV": 3.0,
+      "valorMedidoV": 1.9
+    }
+  ],
+  "componentesVerificados": "placa-mãe sem sinais visíveis de dano; memória e disco não testados (o equipamento não arranca)",
+  "custos": {
+    "fonteSubstituta": 35,
+    "maoDeObra": 20,
+    "pilhaBios": 2
+  },
+  "valorRevendaEstimado": 120
+}

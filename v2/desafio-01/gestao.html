@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestão — Marketplace Inforlândia</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestão do marketplace</h1>
+      <p>Entrada de equipamento no inventário</p>
+    </header>
+
+    <main>
+      <a class="botao" href="/">Voltar à loja</a>
+
+      <p id="mensagem" class="mensagem escondida"></p>
+
+      <form id="formulario">
+        <label>Número de série <input id="numeroSerie" type="text" required /></label>
+        <label>Tipo <input id="tipo" type="text" placeholder="ex.: Desktop" required /></label>
+        <label>Marca <input id="marca" type="text" required /></label>
+        <label>Modelo <input id="modelo" type="text" required /></label>
+        <label>
+          Estado
+          <select id="estado">
+            <option value="em diagnóstico">em diagnóstico</option>
+            <option value="em reparação">em reparação</option>
+            <option value="pronto">pronto</option>
+            <option value="abatido">abatido</option>
+          </select>
+        </label>
+        <label>Avaria <input id="avaria" type="text" /></label>
+        <label>Custo de reparação (€) <input id="custoReparacao" type="number" min="0" /></label>
+        <label>Valor de revenda (€) <input id="valorRevenda" type="number" min="0" /></label>
+        <label>Descrição do estado <input id="descricaoEstado" type="text" /></label>
+        <button type="submit">Registar equipamento</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nº de série</th>
+            <th>Equipamento</th>
+            <th>Estado</th>
+            <th>Avaria</th>
+            <th>Custo reparação</th>
+            <th>Revenda</th>
+          </tr>
+        </thead>
+        <tbody id="linhas"></tbody>
+      </table>
+    </main>
+
+    <script src="/gestao.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+[
+  {
+    "numeroSerie": "INF-0001",
+    "tipo": "Desktop",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "estado": "em diagnóstico",
+    "avaria": "Não liga: sem luz, sem ventoinhas, sem imagem.",
+    "custoReparacao": null,
+    "valorRevenda": 120,
+    "descricaoEstado": "Em diagnóstico. Não está disponível para venda."
+  },
+  {
+    "numeroSerie": "INF-0002",
+    "tipo": "Portátil",
+    "marca": "Dell",
+    "modelo": "Latitude 5490",
+    "estado": "pronto",
+    "avaria": null,
+    "custoReparacao": 40,
+    "valorRevenda": 250,
+    "descricaoEstado": "Recondicionado: bateria substituída, restante equipamento testado."
+  },
+  {
+    "numeroSerie": "INF-0003",
+    "tipo": "Desktop",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "estado": "pronto",
+    "avaria": null,
+    "custoReparacao": 15,
+    "valorRevenda": 160,
+    "descricaoEstado": "Recondicionado: limpo e testado, sem peças substituídas."
+  },
+  {
+    "numeroSerie": "INF-0004",
+    "tipo": "Monitor",
+    "marca": "Lenovo",
+    "modelo": "ThinkVision 24",
+    "estado": "em reparação",
+    "avaria": "Ecrã com linha vertical.",
+    "custoReparacao": null,
+    "valorRevenda": 60,
+    "descricaoEstado": "Em reparação. Não está disponível para venda."
+  }
+]
