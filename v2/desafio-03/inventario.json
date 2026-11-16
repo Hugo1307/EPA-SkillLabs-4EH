@@ -1,0 +1,7 @@
+[
+  { "id": 1, "nome": "Portátil Dell Latitude 5490", "preco": 249, "caracteristicas": "i5 8.ª geração, 8 GB RAM, SSD 256 GB", "custo": 130, "fornecedor": "TechReuse Lda." },
+  { "id": 2, "nome": "Desktop HP EliteDesk 800", "preco": 179, "caracteristicas": "i5 6.ª geração, 8 GB RAM, SSD 240 GB", "custo": 85, "fornecedor": "Escritórios do Norte, S.A." },
+  { "id": 3, "nome": "Monitor Lenovo 24 polegadas", "preco": 69, "caracteristicas": "Full HD, HDMI e DisplayPort", "custo": 28, "fornecedor": "TechReuse Lda." },
+  { "id": 4, "nome": "Portátil Lenovo ThinkPad T480", "preco": 289, "caracteristicas": "i7 8.ª geração, 16 GB RAM, SSD 512 GB", "custo": 160, "fornecedor": "Banco Atlântico (doação)" },
+  { "id": 5, "nome": "Teclado e rato sem fios", "preco": 15, "caracteristicas": "Layout português, pilhas incluídas", "custo": 4, "fornecedor": "Escritórios do Norte, S.A." }
+]

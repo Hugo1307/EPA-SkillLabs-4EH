@@ -1,0 +1,11 @@
+numeroSerie,tipoDisco,tinhaDadosPessoais,metodoApagamento,estadoApagamento
+INF-0001,SSD,sim,sobrescrita completa,concluido
+INF-0002,SSD,sim,sobrescrita completa,concluido
+INF-0003,HDD,sim,formatação rápida,concluido
+INF-0004,SSD,sim,sobrescrita completa,concluido
+INF-0005,HDD,sim,,pendente
+INF-0006,HDD,nao,sobrescrita completa,concluido
+INF-0007,SSD,sim,formatação rápida,concluido
+INF-0008,HDD,sim,sobrescrita completa,concluido
+INF-0009,SSD,sim,,pendente
+INF-0010,HDD,desconhecido,formatação rápida,concluido
