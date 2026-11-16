@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gestão — Marketplace Inforlândia</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Gestão do marketplace</h1>
+      <p>Registo de equipamentos e preços</p>
+    </header>
+
+    <main>
+      <a class="botao" href="/">Voltar à loja</a>
+
+      <p id="mensagem" class="mensagem escondida"></p>
+
+      <form id="formulario">
+        <label>Número de série <input id="numeroSerie" type="text" required /></label>
+        <label>Modelo <input id="modelo" type="text" required /></label>
+        <label>Nome <input id="nome" type="text" required /></label>
+        <label>Descrição <input id="descricao" type="text" required /></label>
+        <label>Disco <input id="disco" type="text" placeholder="ex.: SSD 256 GB" /></label>
+        <label>RAM (GB) <input id="ramGB" type="number" min="0" /></label>
+        <label>Saúde da bateria (%) <input id="bateriaSaude" type="number" min="0" max="100" /></label>
+        <label>Ecrã <input id="ecra" type="text" placeholder="ex.: sem riscos" /></label>
+        <label>Preço (€) <input id="preco" type="number" min="1" required /></label>
+        <button type="submit">Registar equipamento</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nº de série</th>
+            <th>Modelo</th>
+            <th>Disco</th>
+            <th>RAM</th>
+            <th>Bateria</th>
+            <th>Ecrã</th>
+            <th>Preço</th>
+          </tr>
+        </thead>
+        <tbody id="linhas"></tbody>
+      </table>
+    </main>
+
+    <script src="/gestao.js"></script>
+  </body>
+</html>

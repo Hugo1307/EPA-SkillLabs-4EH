@@ -1,0 +1,22 @@
+[
+  {
+    "numeroSerie": "INF-0001",
+    "modelo": "Dell Latitude 5490",
+    "disco": { "tipo": "SSD", "capacidadeGB": 256, "leituraMBs": 520 },
+    "ramGB": 8,
+    "bateria": { "saudePercentagem": 96, "ciclosDeCarga": 40 },
+    "ecra": "sem riscos nem pixéis mortos",
+    "benchmarkPontos": 4150,
+    "testes": "arranque, teclado, portas USB, Wi-Fi e carregador: todos OK"
+  },
+  {
+    "numeroSerie": "INF-0002",
+    "modelo": "Dell Latitude 5490",
+    "disco": { "tipo": "HDD", "capacidadeGB": 500, "leituraMBs": 95 },
+    "ramGB": 4,
+    "bateria": { "saudePercentagem": 61, "ciclosDeCarga": 780 },
+    "ecra": "riscos visíveis no canto inferior direito",
+    "benchmarkPontos": 1980,
+    "testes": "arranque, teclado, portas USB, Wi-Fi e carregador: todos OK"
+  }
+]

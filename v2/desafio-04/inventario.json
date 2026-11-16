@@ -1,0 +1,46 @@
+[
+  {
+    "numeroSerie": "INF-0001",
+    "modelo": "Dell Latitude 5490",
+    "nome": "Portátil Dell Latitude 5490",
+    "preco": 100,
+    "descricao": "Portátil recondicionado com SSD de 256 GB e 8 GB de RAM.",
+    "disco": "SSD 256 GB",
+    "ramGB": 8,
+    "bateriaSaude": 96,
+    "ecra": "sem riscos"
+  },
+  {
+    "numeroSerie": "INF-0002",
+    "modelo": "Dell Latitude 5490",
+    "nome": "Portátil Dell Latitude 5490",
+    "preco": 50,
+    "descricao": "Portátil recondicionado com disco de 500 GB e 4 GB de RAM. Ecrã com riscos visíveis.",
+    "disco": "HDD 500 GB",
+    "ramGB": 4,
+    "bateriaSaude": 61,
+    "ecra": "riscos visíveis"
+  },
+  {
+    "numeroSerie": "INF-0003",
+    "modelo": "HP EliteDesk 800",
+    "nome": "Desktop HP EliteDesk 800",
+    "preco": 80,
+    "descricao": "Desktop recondicionado, testado e limpo.",
+    "disco": "SSD 240 GB",
+    "ramGB": 8,
+    "bateriaSaude": null,
+    "ecra": null
+  },
+  {
+    "numeroSerie": "INF-0004",
+    "modelo": "Monitor Lenovo 24",
+    "nome": "Monitor Lenovo 24 polegadas",
+    "preco": 40,
+    "descricao": "Monitor Full HD recondicionado.",
+    "disco": null,
+    "ramGB": null,
+    "bateriaSaude": null,
+    "ecra": "sem riscos"
+  }
+]
