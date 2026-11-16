@@ -1,0 +1,302 @@
+[
+  {
+    "numeroSerie": "INF-0001",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 170,
+    "estado": "em reparação",
+    "disco": "SSD 240 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0002",
+    "marca": "HP",
+    "modelo": "ProBook 450",
+    "tipo": "Portátil",
+    "preco": 220,
+    "estado": "vendido",
+    "disco": "HDD 500 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0003",
+    "marca": "HP",
+    "modelo": "ProBook 450",
+    "tipo": "Portátil",
+    "preco": 230,
+    "estado": "em reparação",
+    "disco": "SSD 256 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0004",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 190,
+    "estado": "em reparação",
+    "disco": "SSD 240 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0005",
+    "marca": "Dell",
+    "modelo": "Latitude 5490",
+    "tipo": "Portátil",
+    "preco": 270,
+    "estado": "em reparação",
+    "disco": "SSD 512 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0006",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 330,
+    "estado": "vendido",
+    "disco": "SSD 512 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0007",
+    "marca": "HP",
+    "modelo": "ProBook 450",
+    "tipo": "Portátil",
+    "preco": 220,
+    "estado": "pronto",
+    "disco": "SSD 512 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0008",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "pronto",
+    "disco": "SSD 240 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0009",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 330,
+    "estado": "vendido",
+    "disco": "SSD 512 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0010",
+    "marca": "Acer",
+    "modelo": "Veriton X",
+    "tipo": "Desktop",
+    "preco": 170,
+    "estado": "pronto",
+    "disco": "HDD 500 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0011",
+    "marca": "HP",
+    "modelo": "ProBook 450",
+    "tipo": "Portátil",
+    "preco": 230,
+    "estado": "em reparação",
+    "disco": "SSD 512 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0012",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 310,
+    "estado": "vendido",
+    "disco": "SSD 512 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0013",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 180,
+    "estado": "em reparação",
+    "disco": "SSD 256 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0014",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "pronto",
+    "disco": "SSD 240 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0015",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "em reparação",
+    "disco": "HDD 500 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0016",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 180,
+    "estado": "pronto",
+    "disco": "HDD 500 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0017",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 330,
+    "estado": "pronto",
+    "disco": "HDD 500 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0018",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 160,
+    "estado": "em reparação",
+    "disco": "HDD 500 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0019",
+    "marca": "HP",
+    "modelo": "ProBook 450",
+    "tipo": "Portátil",
+    "preco": 250,
+    "estado": "pronto",
+    "disco": "SSD 240 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0020",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 290,
+    "estado": "pronto",
+    "disco": "HDD 500 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0021",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 190,
+    "estado": "pronto",
+    "disco": "SSD 240 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0022",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "vendido",
+    "disco": "SSD 512 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0023",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 220,
+    "estado": "pronto",
+    "disco": "SSD 512 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0024",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 210,
+    "estado": "vendido",
+    "disco": "SSD 240 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0025",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "pronto",
+    "disco": "SSD 256 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0026",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 190,
+    "estado": "em reparação",
+    "disco": "HDD 500 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0027",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "em reparação",
+    "disco": "SSD 256 GB",
+    "ramGB": 8
+  },
+  {
+    "numeroSerie": "INF-0028",
+    "marca": "HP",
+    "modelo": "EliteDesk 800",
+    "tipo": "Desktop",
+    "preco": 210,
+    "estado": "pronto",
+    "disco": "SSD 512 GB",
+    "ramGB": 16
+  },
+  {
+    "numeroSerie": "INF-0029",
+    "marca": "Lenovo",
+    "modelo": "ThinkPad T480",
+    "tipo": "Portátil",
+    "preco": 300,
+    "estado": "pronto",
+    "disco": "SSD 512 GB",
+    "ramGB": 4
+  },
+  {
+    "numeroSerie": "INF-0030",
+    "marca": "Lenovo",
+    "modelo": "ThinkCentre M720",
+    "tipo": "Desktop",
+    "preco": 200,
+    "estado": "em reparação",
+    "disco": "HDD 500 GB",
+    "ramGB": 16
+  }
+]

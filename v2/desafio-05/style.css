@@ -1,0 +1,71 @@
+body {
+  font-family: system-ui, sans-serif;
+  margin: 0;
+  background: #f3f5f8;
+  color: #1f2937;
+}
+
+header {
+  background: #1e3a5f;
+  color: white;
+  padding: 24px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 4px;
+}
+
+header p {
+  margin: 0;
+  opacity: 0.8;
+}
+
+main {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.pesquisa {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pesquisa input[type="text"] {
+  flex: 1;
+  min-width: 240px;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+.opcao {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.contagem {
+  color: #6b7280;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #e5e7eb;
+}
