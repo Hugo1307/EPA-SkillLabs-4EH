@@ -1,111 +1,22 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desafio 02 · Consulta de Inventário</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loja Inforlândia</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Loja Inforlândia</h1>
+      <p>Equipamento informático recondicionado</p>
+    </header>
 
-  <!-- ===================== CABEÇALHO ===================== -->
-  <header class="topo">
-    <div class="topo__conteudo">
-      <div class="marca">
-        <span class="marca__logo">IL</span>
-        <div>
-          <strong>Inforlandia</strong>
-          <small>Inventário informático</small>
-        </div>
-      </div>
-      <span class="etiqueta-desafio">Desafio 02</span>
-    </div>
-  </header>
+    <main>
+      <p id="mensagem" class="mensagem escondida"></p>
+      <section id="produtos"></section>
+    </main>
 
-  <main class="contentor">
-
-    <!-- ===================== INTRODUÇÃO ===================== -->
-    <section class="intro">
-      <h1>O cliente comprou um computador que já não existe</h1>
-      <p>
-        Antes de confirmar uma venda, a equipa tem de verificar se o computador
-        ainda existe no inventário e em que estado se encontra.
-        Pesquise pelo número de série.
-      </p>
-    </section>
-
-    <!-- ===================== PESQUISA ===================== -->
-    <section class="cartao">
-      <div class="cartao__titulo">
-        <h2>Pesquisar equipamento</h2>
-      </div>
-
-      <form id="form-pesquisa" class="pesquisa" autocomplete="off">
-        <div class="campo">
-          <label for="campo-pesquisa">Número de série</label>
-          <input type="text" id="campo-pesquisa" placeholder="Ex.: INF-2026-0003">
-        </div>
-        <button type="submit" class="botao">
-          <svg class="icone" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          Pesquisar
-        </button>
-        <button type="button" id="botao-limpar" class="botao botao--secundario">Limpar</button>
-      </form>
-      <p class="ajuda">Dica: clique numa linha da tabela para copiar o número de série para a pesquisa.</p>
-    </section>
-
-    <!-- ===================== RESULTADO ===================== -->
-    <section class="cartao">
-      <div class="cartao__titulo">
-        <h2>Resultado</h2>
-      </div>
-
-      <!-- Mensagem de feedback (sucesso / aviso / erro / info) -->
-      <div id="mensagem" class="alerta" role="status" aria-live="polite"></div>
-
-      <!-- Ficha do computador encontrado -->
-      <div id="resultado">
-        <p class="texto-suave">Ainda não foi feita nenhuma pesquisa.</p>
-      </div>
-    </section>
-
-    <!-- ===================== LISTA ===================== -->
-    <section class="cartao">
-      <div class="cartao__titulo">
-        <h2>Computadores no inventário (<span id="total-equipamentos">0</span>)</h2>
-        <div class="legenda">
-          <span class="estado estado--disponivel">Disponível</span>
-          <span class="estado estado--manutencao">Em manutenção</span>
-          <span class="estado estado--vendido">Vendido</span>
-          <span class="estado estado--abatido">Abatido</span>
-        </div>
-      </div>
-
-      <div class="tabela-contentor">
-        <table class="tabela">
-          <thead>
-            <tr>
-              <th>N.º de série</th>
-              <th>Marca</th>
-              <th>Modelo</th>
-              <th>Tipo</th>
-              <th class="numero">Preço</th>
-              <th>Estado</th>
-            </tr>
-          </thead>
-          <tbody id="corpo-tabela">
-            <!-- As linhas são criadas pelo JavaScript (função mostrarTabela) -->
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="rodape">
-    EPA · 4EH · SkillLABS 1 — Projeto pedagógico com dados fictícios
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="/script.js"></script>
+  </body>
 </html>

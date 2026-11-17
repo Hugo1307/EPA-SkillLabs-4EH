@@ -1,237 +1,111 @@
-# EPA Desafios — SkillLABS 1 · 4EH
+# EPA Desafios v2 — SkillLABS 1 · 4EH
 
-Três pequenos projetos de programação baseados nos desafios do **SkillLABS 1** (Inforlandia: recondicionamento de equipamento informático e marketplace online).
+Cinco pequenos projetos baseados nos desafios do **SkillLABS 1** (Inforlândia: recondicionamento de equipamento informático e marketplace online).
 
-Cada projeto já **funciona** e já tem o **aspeto final**, mas faltam algumas funcionalidades. O teu trabalho é **ler o código existente, perceber como está organizado e implementar o que falta**. As tarefas estão marcadas no `script.js` com comentários `TODO`.
+Cada projeto é uma aplicação web **que já funciona**, com uma loja e, em alguns casos, uma aplicação de gestão, ligadas a um **servidor** escrito em JavaScript. O teu trabalho **não é escrever a aplicação de raiz**: é **explorá-la, perceber como funciona e responder ao desafio**. Em alguns desafios há um problema para encontrar e corrigir; noutros, há uma decisão para tomar e justificar.
 
-| Pasta | Desafio | Tema de programação | Dificuldade |
-|---|---|---|---|
-| `desafio-02/` | O cliente comprou um computador que já não existe | arrays, objetos, pesquisa, `if/else` | ★★☆ |
-| `desafio-03/` | Qualquer pessoa pode entrar na gestão | validação, login, perfis e permissões | ★★☆ |
-| `desafio-05/` | E se fossem 300 computadores? | `filter`, `sort`, contagens, filtros combinados | ★★★ |
+| Pasta | Desafio | Tipo de trabalho |
+|---|---|---|
+| `desafio-01/` | Este computador não liga | Diagnosticar e decidir: recondicionar ou abater |
+| `desafio-02/` | O cliente comprou um que já não existe | Encontrar o erro e corrigi-lo |
+| `desafio-03/` | Qualquer pessoa pode entrar na gestão | Encontrar os problemas de segurança e corrigi-los |
+| `desafio-04/` | Vale cem euros ou cinquenta? | Justificar os preços e propor uma regra |
+| `desafio-05/` | E se fossem trezentos computadores? | Medir, decidir o que escala e o que não escala |
+
+Cada grupo trabalha **no seu desafio**. Dentro do grupo, cada aluno assume uma **estação** (E1 a E5) e prepara aquilo que tem de apresentar e justificar no dia do SkillLabs.
 
 ---
 
-## Como começar
+## Como correr o código
 
-1. Abre a pasta do desafio e faz **duplo clique em `index.html`**. Abre no browser e não precisa de servidor nem de internet.
-2. Abre o `script.js` num editor (por exemplo, o VS Code).
-3. Abre a **consola do browser** (`F12`, separador *Consola*). É lá que aparecem os erros e as mensagens de `console.log()`.
-4. Resolve os `TODO` **pela ordem**: muitas tarefas usam a função da tarefa anterior.
-5. Depois de cada alteração, **guarda o ficheiro e atualiza a página** (`F5`).
+### 1. Instalar o Node.js
+
+Os servidores são programas em JavaScript, por isso precisas do **Node.js** instalado no computador.
+
+1. Abre **https://nodejs.org** e descarrega a versão **LTS** (a recomendada).
+2. Abre o ficheiro descarregado e segue o instalador (aceita as opções por defeito). Funciona em Windows e macOS.
+3. **Fecha e volta a abrir** o terminal (ou o VS Code) depois de instalar.
+4. Confirma que ficou instalado. Num terminal, escreve:
+
+```
+node --version
+```
+
+Deve aparecer um número de versão, por exemplo `v22.11.0`. Se aparecer um erro como *«node não é reconhecido como comando»*, o Node não ficou instalado ou o terminal ainda não foi reiniciado.
+
+> Não precisas de instalar mais nada. **Não é preciso `npm install`**: os projetos usam apenas o que já vem com o Node.
+
+### 2. Abrir o terminal na pasta do desafio
+
+No **VS Code**:
+
+1. Abre a pasta do teu desafio (`Ficheiro > Abrir Pasta…`), por exemplo `v2/desafio-02`.
+2. Abre o terminal: `Terminal > Novo Terminal`. O terminal já abre dentro da pasta certa.
+
+Noutro terminal, usa `cd` para ir até à pasta:
+
+```
+cd caminho/para/v2/desafio-02
+```
+
+### 3. Arrancar o servidor
+
+```
+node servidor.js
+```
+
+Deve aparecer a mensagem:
+
+```
+Servidor a correr em http://localhost:3000
+```
+
+### 4. Abrir no browser
+
+Abre **http://localhost:3000** no browser. O terminal vai mostrando cada pedido que o servidor recebe (por exemplo `GET /produtos`). Isto é muito útil para perceber o que acontece quando carregas num botão.
+
+### 5. Parar o servidor
+
+No terminal, carrega em **`Ctrl + C`**.
+
+### Quando é preciso reiniciar?
+
+| Alteraste… | O que fazer |
+|---|---|
+| `index.html`, `script.js`, `style.css`, `gestao.js`, … | Guarda e atualiza o browser (`F5`) |
+| `inventario.json` | Atualiza o browser (`F5`) |
+| `servidor.js` | **Para o servidor (`Ctrl + C`) e arranca outra vez (`node servidor.js`)** |
+
+### Problemas comuns
+
+| Problema | Causa e solução |
+|---|---|
+| `EADDRINUSE: address already in use :::3000` | Já há um servidor a correr na porta 3000 (um terminal esquecido, ou outro desafio). Fecha-o com `Ctrl + C` no terminal onde está, ou fecha todos os terminais e tenta outra vez. |
+| `node não é reconhecido…` / `command not found: node` | O Node não está instalado, ou o terminal foi aberto antes da instalação. Reinstala e volta a abrir o terminal. |
+| A página não abre | Confirma que o servidor está a correr e que escreveste `http://localhost:3000`. |
+| Fiz alterações e a página não mudou | Atualiza com `F5`. Se alteraste o `servidor.js`, reinicia o servidor. |
+
+### Dicas para explorares o projeto
+
+- Abre as **ferramentas do browser** (`F12`). No separador **Rede** vês cada pedido que a página faz ao servidor e o que o servidor responde. No separador **Consola** aparecem os erros.
+- Abre o `servidor.js` e procura as **rotas**: é o que o servidor sabe fazer.
+- Os dados ficam em **ficheiros** (`inventario.json` e, nalguns desafios, ficheiros na pasta `dados/`). Abre-os no editor para veres o que está guardado.
+- **Antes de alterares um ficheiro de dados**, faz uma cópia dele. Nos desafios 1, 4 e 5 a aplicação de gestão escreve no `inventario.json`, e assim podes voltar ao estado inicial.
 
 ### Regras
 
-- Trabalha **só** nas funções marcadas com `TODO`. As outras funções já funcionam, e podes (e deves) usá-las.
-- Quando uma função tem uma linha `return ...; // <- substitui esta linha` ou uma mensagem *"ainda não foi implementado"*, **apaga-a** quando escreveres a tua solução.
-- Usa apenas **HTML, CSS e JavaScript** (sem bibliotecas, sem frameworks, sem servidor).
-- Testa **todos os casos** da lista de testes de cada desafio, incluindo os casos de erro.
+- Usa apenas **HTML, CSS, JavaScript e Node.js**. Sem bibliotecas nem frameworks.
+- Cada desafio é independente: corre **um servidor de cada vez** (todos usam a porta 3000).
+- Quando corrigires ou alterares algo, **sabe explicar o que mudaste e porquê**. Faz parte da avaliação.
 
 ### Estrutura
 
 ```
-EPA-Desafios/
-├── desafio-02/   index.html · style.css · script.js
-├── desafio-03/   index.html · style.css · script.js
-├── desafio-05/   index.html · style.css · script.js
+v2/
+├── desafio-01/   servidor.js · inventario.json · index.html · gestao.html · … · dados/
+├── desafio-02/   servidor.js · inventario.json · index.html · … · dados/
+├── desafio-03/   servidor.js · inventario.json · utilizadores.json · login.html · gestao.html · … · dados/
+├── desafio-04/   servidor.js · inventario.json · index.html · gestao.html · … · dados/
+├── desafio-05/   servidor.js · inventario.json · gerar-dados.js · teste-carga.js · …
 └── README.md     (este documento)
 ```
-
-Os três `script.js` estão organizados da mesma forma: **dados → elementos da página (DOM) → funções já implementadas → funções por implementar (TODO) → arranque**.
-
-Os três `style.css` partilham a mesma base visual: cores, botões, campos, tabelas, mensagens e etiquetas de estado. As classes mais úteis são:
-
-| Classe | Para quê |
-|---|---|
-| `alerta alerta--sucesso` / `--aviso` / `--erro` / `--info` | mensagens de feedback |
-| `estado estado--disponivel` / `--manutencao` / `--vendido` / `--abatido` | etiquetas coloridas de estado |
-| `botao`, `botao--secundario`, `botao--perigo`, `botao--sucesso` | botões |
-| `escondido` | esconde um elemento |
-
----
-
-## Desafio 02 — «O cliente comprou um computador que já não existe»
-
-### Contexto
-
-Um computador foi vendido duas vezes no site: a segunda venda aconteceu depois de o equipamento já ter saído do inventário. Antes de confirmar uma venda, a equipa precisa de uma ferramenta que diga se o computador **existe** e em que **estado** está.
-
-### O que já está feito
-
-- Lista de **10 computadores** fictícios (array de objetos) com número de série, marca, modelo, tipo, preço e estado.
-- Tabela com todos os computadores e etiquetas coloridas por estado.
-- Caixa de pesquisa, botão *Limpar* e clique numa linha para copiar o número de série.
-- Funções prontas: `mostrarMensagem(tipo, texto)`, `mostrarFichaComputador(computador)`, `limparFicha()`, `mostrarTabela(lista)`.
-
-### Tarefas
-
-| TODO | Função | O que fazer | Dificuldade |
-|---|---|---|---|
-| 1 | `normalizarNumeroSerie(texto)` | Retirar espaços e passar para maiúsculas | ★☆☆ |
-| 2 | `procurarComputador(numeroSerie)` | Percorrer o array e devolver o computador, ou `null` se não existir | ★★☆ |
-| 3 | `pesquisar(evento)` | Validar o campo, procurar e mostrar uma mensagem diferente para cada estado | ★★☆ |
-| 4 | `destacarLinha(numeroSerie)` | Destacar na tabela a linha do computador encontrado | ★★☆ |
-| 5 | `venderComputador(numeroSerie)` | Registar a venda **sem permitir vender duas vezes** (o problema do desafio) | ★★★ |
-
-### Testes que têm de passar
-
-| Pesquisa | Resultado esperado |
-|---|---|
-| *(campo vazio)* | Aviso: «Introduza um número de série.» |
-| `INF-2026-0001` | Sucesso: disponível para venda, ficha visível, linha destacada |
-| `  inf-2026-0001 ` | Igual ao anterior (espaços e minúsculas são aceites) |
-| `INF-2026-0004` | Informação: em manutenção, ainda não pode ser vendido |
-| `INF-2026-0003` | Aviso: já foi vendido |
-| `INF-2026-0006` | Erro: abatido ao inventário |
-| `INF-9999-0000` | Erro: não existe nenhum computador com esse número de série |
-| Vender `INF-2026-0001` duas vezes | 1.ª vez: venda registada · 2.ª vez: venda **recusada** |
-
-### Conceitos
-
-Arrays e objetos · ciclo `for...of` · `.find()` · `if / else if` · `trim()` / `toUpperCase()` · `classList` · `dataset`
-
-### Extras (opcional)
-
-- Mostrar, por cima da tabela, quantos computadores há em cada estado.
-- Pedir confirmação antes de registar a venda (`confirm()`).
-- Adicionar um botão «Abater» que muda o estado para *Abatido*.
-
----
-
-## Desafio 03 — «Qualquer pessoa pode entrar na gestão»
-
-### Contexto
-
-A página de gestão do marketplace abre a quem souber o endereço, sem pedir palavra-passe. É preciso protegê-la com um login **sem estragar o que já funcionava**.
-
-### Como funciona a aplicação
-
-A aplicação tem quatro «ecrãs» na mesma página, escolhidos pelo endereço:
-
-| Endereço | Ecrã | Quem deve poder ver |
-|---|---|---|
-| `index.html#login` | Login | Toda a gente |
-| `index.html#consulta` | Consulta (preço, características) | Quem fez login (qualquer perfil) |
-| `index.html#gestao` | Gestão (custo, margem, fornecedor) | **Só administradores** |
-| *(ecrã «negado»)* | Acesso negado | Aparece quando o acesso é recusado |
-
-Sempre que o endereço muda, é chamada a função `router()`.
-
-**O problema:** abre a página e carrega em «Abrir `index.html#gestao` sem login». A gestão abre!
-
-### Credenciais de teste
-
-| Utilizador | Palavra-passe | Perfil |
-|---|---|---|
-| `admin` | `Admin#2026` | Administrador |
-| `gestor` | `Gestor#2026` | Administrador |
-| `joao` | `Joao#2026` | Utilizador |
-| `maria` | `Maria#2026` | Utilizador |
-
-### O que já está feito
-
-- Ecrã de login com o botão «Mostrar/Esconder» palavra-passe, ecrãs de consulta, de gestão e de acesso negado.
-- Lista de contas e de produtos (com dados públicos e dados internos separados).
-- Barra de sessão no cabeçalho (nome, perfil e botão *Terminar sessão*).
-- Funções prontas: `mostrarEcra(nome)`, `mostrarMensagem(zona, tipo, texto)`, `mostrarAcessoNegado(motivo, destino)`, `atualizarBarraSessao()`.
-
-### Tarefas
-
-| TODO | Função | O que fazer | Dificuldade |
-|---|---|---|---|
-| 1 | `camposPreenchidos(utilizador, palavraPasse)` | Verificar se os dois campos estão preenchidos | ★☆☆ |
-| 2 | `verificarCredenciais(utilizador, palavraPasse)` | Procurar a conta; o utilizador não distingue maiúsculas, a palavra-passe distingue | ★★☆ |
-| 3 | `fazerLogin(evento)` | Validar, autenticar, guardar a sessão e encaminhar conforme o perfil | ★★☆ |
-| 4 | `abrirGestao()` | **Proteger a gestão:** sem login → negado; perfil utilizador → negado | ★★☆ |
-| 5 | `abrirConsulta()` | Proteger a consulta: só com login | ★☆☆ |
-| 6 | `terminarSessao()` | Terminar a sessão e voltar ao login | ★☆☆ |
-
-### Testes que têm de passar
-
-| Ação | Resultado esperado |
-|---|---|
-| Entrar com os campos vazios | Aviso: preencher os campos |
-| `joao` / `joao#2026` | Erro: «Acesso negado: utilizador ou palavra-passe incorretos.» |
-| `JOAO` / `Joao#2026` | Acesso autorizado → ecrã **Consulta** |
-| Com `joao`, clicar em «Gestão» | **Acesso negado:** sem permissão |
-| `admin` / `Admin#2026` | Acesso autorizado → ecrã **Gestão** |
-| Abrir `index.html#gestao` **sem login** | **Acesso negado:** tem de iniciar sessão |
-| Terminar sessão e voltar a abrir `#gestao` | **Acesso negado** |
-
-> **Teste «antes e depois»:** antes de começarem, registem numa folha o que acontece ao abrir `#gestao` sem login. Repitam no fim e anotem a diferença.
-
-### Conceitos
-
-Validação de formulários · pesquisa num array de objetos · operadores `&&` / `||` · variável de estado (`utilizadorAtual`) · perfis e permissões · `location.hash`
-
-### Extras (opcional)
-
-- Bloquear o login durante 30 segundos após 3 tentativas falhadas.
-- Guardar a sessão em `sessionStorage` para não se perder ao atualizar a página (e explicar o que é uma sessão).
-- Mostrar o link «Gestão» no menu apenas a administradores. **Atenção:** isto não substitui o TODO 4. Porquê?
-
----
-
-## Desafio 05 — «E se fossem 300 computadores?»
-
-### Contexto
-
-Com trinta equipamentos, uma lista simples chega. A Inforlandia quer saber se a solução aguenta **trezentos**. Com 300 linhas, ninguém encontra nada a olho: é preciso **pesquisar, filtrar, ordenar e ver totais**.
-
-### O que já está feito
-
-- **Gerador automático** de 300 computadores fictícios (`gerarComputadores`). Gera sempre os mesmos dados, por isso todos na turma veem os mesmos resultados.
-- O array principal chama-se `inventario`. Escreve `inventario` ou `inventario[0]` na consola para o explorares.
-- Tabela com as 300 linhas, cartões de estatísticas (vazios), caixa de pesquisa, filtro de estado e ordenação.
-- A função `aplicarFiltros()` já liga tudo: pesquisa → filtro → ordenação → tabela. Cada uma dessas funções está, por agora, a devolver a lista sem alterações.
-
-### Tarefas
-
-| TODO | Função | O que fazer | Dificuldade |
-|---|---|---|---|
-| 1 | `atualizarEstatisticas()` | Contar o total, os disponíveis, os em manutenção e os vendidos | ★☆☆ |
-| 2 | `pesquisarPorSerie(lista, texto)` | Devolver os computadores cujo número de série **contém** o texto | ★★☆ |
-| 3 | `filtrarPorEstado(lista, estado)` | Devolver só os computadores com esse estado (`"todos"` = sem filtro) | ★☆☆ |
-| 4 | `ordenarComputadores(lista, criterio)` | Ordenar por série, marca, preço (crescente ou decrescente) ou data | ★★★ |
-| 5 | `mostrarResultados(quantidade)` | Mostrar «A mostrar X de 300» e um aviso quando não há resultados | ★☆☆ |
-| 6 | `limparFiltros()` | Repor a pesquisa, o filtro e a ordenação iniciais | ★☆☆ |
-
-### Testes que têm de passar
-
-| Ação | Resultado esperado |
-|---|---|
-| Abrir a página | Cartões com Total **300**, Disponíveis **172**, Em manutenção **59**, Vendidos **48** |
-| Pesquisar `hp` | **57** computadores (todos HP) |
-| `hp` + estado «Disponível» | **33** computadores |
-| Ordenar por «Preço (mais caro)» | O primeiro custa **576,00 €** |
-| Pesquisar `zzz` | «A mostrar 0 de 300» e mensagem de aviso |
-| «Limpar filtros» | Volta a mostrar 300, ordenados por número de série (`ACE-2026-0001` primeiro) |
-| Combinar pesquisa + estado + ordenação | Os três funcionam em conjunto |
-
-### Conceitos
-
-Arrays de objetos · `.filter()` · `.sort()` com função de comparação · cópia de arrays (`[...lista]`) · `.includes()` · `localeCompare()` · contadores
-
-### Extras (opcional)
-
-- **Paginação:** mostrar 25 computadores de cada vez, com botões «Anterior» / «Seguinte».
-- **Medir o tempo:** usar `performance.now()` para medir quanto demora `aplicarFiltros()`. Mudar `TOTAL_COMPUTADORES` para 3000 e para 30 000 e comparar.
-- Ordenar ao clicar no cabeçalho de uma coluna.
-- Um cartão extra com o **valor total** do stock disponível (soma dos preços).
-- Um filtro por marca.
-
----
-
-## Ligação aos blocos do SkillLABS
-
-Estes projetos são uma base para a parte de programação de cada desafio. Podem ser usados na demonstração do Bloco A e discutidos no Bloco B:
-
-- **Desafio 2:** o campo que guarda o estado do equipamento, o que muda quando é vendido e porque é que uma página desatualizada deixa vender duas vezes.
-- **Desafio 3:** dados públicos e dados internos, onde se define que só entra quem fez login, e o teste antes e depois.
-- **Desafio 5:** o que muda quando há centenas de produtos (listagem, pesquisa, carregamento), o que é *client-side* e o que teria de passar para *server-side*.
-
-### Perguntas para discutir em grupo
-
-1. Neste projeto, onde estão guardados os dados? O que acontece quando se atualiza a página? E se fossem dois funcionários em dois computadores diferentes?
-2. No desafio 3, porque é que esconder o botão «Gestão» não chega para proteger a página?
-3. No desafio 5, a solução que fizeram continuaria a funcionar com 30 000 computadores? Como sabem?
